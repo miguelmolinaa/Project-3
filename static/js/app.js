@@ -1,5 +1,5 @@
 // Use D3.js to load JSON data from an external file
-d3.json("Resources/all-listing-json.json").then(function(data) {
+d3.json("http://localhost:3000/all-listing-json").then(function(data) {
     // Function to calculate the price distribution
     function calculatePriceDistribution(data) {
         // Extract property prices and convert to numeric values
