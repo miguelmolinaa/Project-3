@@ -3,30 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 3</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Project Code Presentation</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Include D3.js from the CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Include Plotly.js from the CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>Project 3</h1>
+        <h1>Project Code Presentation</h1>
     </header>
-    
-    <section id="price-distribution">
-        <h2>Price Distribution</h2>
-        <div id="price-chart"></div>
-    </section>
-    
-    <section id="properties-by-state">
-        <h2>Properties by State</h2>
-        <div id="state-chart"></div>
-    </section>
-    
-    <section id="avg-price-per-sqft">
-        <h2>Average Price per Square Foot</h2>
-        <div id="avg-price-chart"></div>
+
+    <nav>
+        <ul>
+            <li><a href="#section1">Team Member 1</a></li>
+            <li><a href="#section2">Team Member 2</a></li>
+            <li><a href="#section3">Team Member 3</a></li>
+            <li><a href="#section4">Team Member 4</a></li>
+            <li><a href="#section5">Team Member 5</a></li>
+        </ul>
+    </nav>
+
+    <section id="section1">
+        <h2>Team Member 1</h2>
+        <p>Here, Team Member 1 can present their code contributions or sections of the project. Include code snippets, explanations, and any relevant details.</p>
     </section>
 
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="js/app.js"></script>
+    <section id="section2">
+        <h2>Team Member 2</h2>
+        <p>Team Member 2 can showcase their code contributions and provide explanations for their work.</p>
+    </section>
+
+    <section id="section3">
+        <h2>Team Member 3</h2>
+        <p>Similarly, Team Member 3 can present their code sections and any relevant information.</p>
+    </section>
+
+    <section id="section4">
+        <h2>Team Member 4</h2>
+        <p>Similarly, Team Member 4 can present their code sections and any relevant information.</p>
+    </section>
+    
+    <!-- Chart container for Price Distribution -->
+    <div id="price-chart"></div>
+
+    <!-- Chart container for Properties by State -->
+    <div id="state-chart"></div>
+
+    <!-- Chart container for Average Price per Square Foot -->
+    <div id="avg-price-chart"></div>
+
+    <section id="section5">
+        <h2>Team Member 5</h2>
+        <p>Similarly, Team Member 5 can present their code sections and any relevant information.</p>
+    </section>
+
+    <script src="static/js/app.js"></script>
 </body>
 </html>
