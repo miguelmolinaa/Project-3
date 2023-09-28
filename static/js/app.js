@@ -147,7 +147,7 @@ d3.json("Resources/all-listing-json.json").then(function (data) {
       };
   
       const layout = {
-        title: "Property Count by State",
+        title: "Property Type by State",
         showlegend: true,
         legend: {
           x: 0.85, // Adjust the legend position
