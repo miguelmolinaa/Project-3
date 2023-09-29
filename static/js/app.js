@@ -1,8 +1,43 @@
 // Sample JSON data (replace this with your actual data)
-const jsonData = [
-    // ... your JSON data here ...
-];
+import jsonData from '../Resources/all-listing-json.js';
 
+function plotLocations() {
+    const locations = jsonData.map(property => ({
+        lon: parseFloat(property.Longitude),
+        lat: parseFloat(property.Latitude)
+    })).filter(location => 
+        !isNaN(location.lon) && 
+        !isNaN(location.lat)
+    );
+
+    const lonValues = locations.map(location => location.lon);
+    const latValues = locations.map(location => location.lat);
+
+    const trace = {
+        type: 'scattermapbox',
+        lon: lonValues,
+        lat: latValues,
+        mode: 'markers',
+        marker: { size: 10, color: 'red' }
+    };
+
+    const layout = {
+        title: 'Property Locations',
+        mapbox: { 
+            style: 'open-street-map', 
+            zoom: 4, 
+            center: { 
+                lat: latValues[0], 
+                lon: lonValues[0] 
+            } 
+        },
+        margin: { r: 0, t: 0, b: 0, l: 0 }
+    };
+
+    Plotly.newPlot('map', [trace], layout, { responsive: true });
+}
+
+plotLocations();  // Call the function to plot locations
 // Function to calculate the price distribution
 function calculatePriceDistribution(data) {
     // Extract property prices and convert to numeric values
