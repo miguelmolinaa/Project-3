@@ -1,0 +1,26 @@
+body {
+    font-family: "Tahoma", sans-serif;
+}
+header h1 {
+    text-align: center;
+    color: white;
+}
+header {
+    background-image: url('https://www.lt6p.com/re/img/buysell/bg-home-new.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 300px;
+}
+header h2 {
+    text-align: center;
+    color: white;
+}
+
+nav {
+    text-align: center;
+}
+section {
+    text-align: center;
+}
+

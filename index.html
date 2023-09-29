@@ -12,13 +12,15 @@
 </head>
 <body>
     <header>
-        <h1>Project Code Presentation</h1>
+        <h1>Project 3: Code Presentation</h1>
+            <h2> Chelsea Pimentel / Miguel Molina / Luke Coodlidge / Anna Amurovna Nartikoeva / Md Yousuf Reja </h2>
+
     </header>
 
     <nav>
         <ul>
             <li><a href="#section1">Team Member 1</a></li>
-            <li><a href="#section2">Team Member 2</a></li>
+            <li><a href="#section2">Chelsea Pimentel</a></li>
             <li><a href="#section3">Team Member 3</a></li>
             <li><a href="#section4">Team Member 4</a></li>
             <li><a href="#section5">Team Member 5</a></li>
@@ -34,8 +36,26 @@
 <script type="module" src="static/js/app.js"></script>
 
     <section id="section2">
-        <h2>Team Member 2</h2>
-        <p>Team Member 2 can showcase their code contributions and provide explanations for their work.</p>
+        <h2>Chelsea Pimentel</h2>
+        <h3>This JavaScript code loads data from a JSON file containing property listings and creates interactive data visualizations using the Plotly library. It includes the following functionalities:</h3>
+        <p>State Pie Chart: It generates a pie chart displaying property counts by state, and it allows users to interactively select a state from a dropdown menu to see property type distribution for that state.</p>
+       
+    </section>
+
+    <!-- This add the dropdown by state -->
+    <select id="state-dropdown">
+        <option value="" disabled selected>Select a State</option>
+    </select>
+    <!-- This adds the display of the dropdown-->
+    <!-- This adds the specialist chart -->
+   
+    <div id="state-chart"></div>
+    <section>
+    <p>Specialist Sales Bar Chart: It calculates and displays a bar chart showing the number of houses sold and total sales for different specialists involved in property sales.</p>
+    <p>Property Type Counts: It counts and displays the number of properties for each property type and updates the counts dynamically based on the selected state.</p>
+    </section>
+    <div id="specialist-chart"></div>
+
     </section>
 
     <section id="section3">
@@ -45,17 +65,7 @@
 
     <section id="section4">
         <h2>Team Member 4</h2>
-        <p>Similarly, Team Member 4 can present their code sections and any relevant information.</p>
-    </section>
-    
-    <!-- Chart container for Price Distribution -->
-    <div id="price-chart"></div>
-
-    <!-- Chart container for Properties by State -->
-    <div id="state-chart"></div>
-
-    <!-- Chart container for Average Price per Square Foot -->
-    <div id="avg-price-chart"></div>
+        <p>Team Member 4 can showcase their code contributions and provide explanations for their work.</p>
 
     <section id="section5">
         <h2>Team Member 5</h2>
