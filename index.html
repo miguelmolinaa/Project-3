@@ -9,6 +9,8 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Include Plotly.js from the CDN -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Include your JSON data script -->
+    <script src="Resources/all-listing-gecodio.json"></script>
 </head>
 <body>
     <header>
@@ -18,8 +20,8 @@
     </header>
 
     <nav>
-        <ul class="property-type-list">
-            <li><a href="#section1">Team Member 1</a></li>
+        <ul>
+            <li><a href="#section1">Md Yousuf Reja</a></li>
             <li><a href="#section2">Chelsea Pimentel</a></li>
             <li><a href="#section3">Team Member 3</a></li>
             <li><a href="#section4">Team Member 4</a></li>
@@ -28,8 +30,18 @@
     </nav>
 
     <section id="section1">
-        <h2>Team Member 1</h2>
+        <h2>Md Yousuf Reja </h2>
         <p>Here, Team Member 1 can present their code contributions or sections of the project. Include code snippets, explanations, and any relevant details.</p>
+    </section>
+<!-- Map container for Property Locations -->
+<div id="map" style="height: 500px;"></div>
+<script type="module" src="static/js/app.js"></script>
+
+    <div id="map" style="height: 600px;"></div>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
     </section>
 
     <section id="section2">
@@ -57,7 +69,7 @@
 
     <section id="section3">
         <h2>Team Member 3</h2>
-        <p>Similarly, Team Member 3 can present their code sections and any relevant information.</p>
+        <p>Mi name is miguel .</p>
     </section>
 
     <section id="section4">
@@ -65,8 +77,8 @@
         <p>Team Member 4 can showcase their code contributions and provide explanations for their work.</p>
 
     <section id="section5">
-        <h2>ANA Team Member</h2>
-        <p>Additional Changes.</p>
+        <h2>Changes from Chelsea_ branch</h2>
+        <p>Addional changes to check for branch updates on Github</p>
     </section>
 
     <script src="static/js/app.js"></script>
