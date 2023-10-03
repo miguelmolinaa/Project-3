@@ -1,9 +1,11 @@
 // Load data from your JSON file (all-listing-json.json)
 // http://localhost:8000
+//python -m http.server
 d3.json("Resources/all-listing-json.json").then(function (data) {
     // Begin state pie chart code
   
     // Extract unique states from the data
+    // new set drops duplicates
     const states = [...new Set(data.map((item) => item.State))];
   
     // Populate the state dropdown with state options
