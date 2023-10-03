@@ -1,5 +1,5 @@
 // Load data from your JSON file (all-listing-json.json)
-// http://localhost:8000
+// http://localhost:8000       python -m http.server   
 d3.json("Resources/all-listing-json.json").then(function (data) {
     // Begin state pie chart code
   
