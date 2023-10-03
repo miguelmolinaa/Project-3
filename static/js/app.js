@@ -1,6 +1,63 @@
+<<<<<<< HEAD
+// Sample JSON data (replace this with your actual data)
+import jsonData from '../Resources/all-listing-json.js';
+
+function plotLocations() {
+    const locations = jsonData.map(property => ({
+        lon: parseFloat(property.Longitude),
+        lat: parseFloat(property.Latitude)
+    })).filter(location => 
+        !isNaN(location.lon) && 
+        !isNaN(location.lat)
+    );
+
+    const lonValues = locations.map(location => location.lon);
+    const latValues = locations.map(location => location.lat);
+
+    const trace = {
+        type: 'scattermapbox',
+        lon: lonValues,
+        lat: latValues,
+        mode: 'markers',
+        marker: { size: 10, color: 'red' }
+    };
+
+    const layout = {
+        title: 'Property Locations',
+        mapbox: { 
+            style: 'open-street-map', 
+            zoom: 4, 
+            center: { 
+                lat: latValues[0], 
+                lon: lonValues[0] 
+            } 
+        },
+        margin: { r: 0, t: 0, b: 0, l: 0 }
+    };
+
+    Plotly.newPlot('map', [trace], layout, { responsive: true });
+}
+
+plotLocations();  // Call the function to plot locations
+// Function to calculate the price distribution
+function calculatePriceDistribution(data) {
+    // Extract property prices and convert to numeric values
+    const prices = data.map(property => parseFloat(property.Price.replace(',', '')));
+
+    // Create a histogram of property prices
+    const trace = {
+        x: prices,
+        type: 'histogram',
+        marker: { color: 'blue' },
+=======
 // Load data from your JSON file (all-listing-json.json)
+<<<<<<< HEAD
 // http://localhost:8000       python -m http.server   
 d3.json("Resources/all-listing-json.json").then(function (data) {
+=======
+// http://localhost:8000
+d3.json("Resources/all-listing-gecodio.json").then(function (data) {
+>>>>>>> main
     // Begin state pie chart code
   
     // Extract unique states from the data
@@ -79,6 +136,7 @@ d3.json("Resources/all-listing-json.json").then(function (data) {
       y: housesSold,
       type: "bar",
       name: "Houses Sold",
+>>>>>>> 265c10219cddc5e830a1de41ce1fbe9c8a6af79f
     };
   
     const trace2 = {
@@ -182,4 +240,49 @@ d3.json("Resources/all-listing-json.json").then(function (data) {
       Plotly.newPlot("state-chart", chartData, layout);
     }
   }
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Initialize the map at the beginning
+    const map = L.map("map").setView([29.7604, -95.3698], 5);
   
+    // Set the Mapbox tile layer
+    const mapboxTileLayer = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+      attribution: "Map data © <a href='https://www.mapbox.com/'>Mapbox</a> contributors",
+      maxZoom: 18,
+      id: "mapbox/satellite-streets-v11", // Specify the Mapbox style ID
+      accessToken: "pk.eyJ1IjoiY3BpbWVudGVsMTUiLCJhIjoiY2xuMTBxbDc4MXhyZjJrbnRvNTF2a2h6NiJ9.g_yMQ4MLNN4zMajTjjhnXw"
+    });
+  
+    mapboxTileLayer.addTo(map); // Add the tile layer to the map
+  
+    // Load JSON data and create the map with markers
+    d3.json("Resources/all-listing-gecodio.json").then(function (data) {
+      const markerGroup = createPropertyMap(data, map);
+      markerGroup.addTo(map);
+    });
+  
+    function createPropertyMap(data, map) {
+      const markers = []; // Array to store markers
+  
+      data.forEach((property) => {
+        if (property.Latitude && property.Longitude) {
+          const popupContent = `
+            <b>Full Address:</b> ${property.Address}<br>
+            <b>Price:</b> ${property.Price}<br>
+            <b>Property Type:</b> ${property["Property Type"]}<br>
+            <b>Beds:</b> ${property.Beds}<br>
+            <b>Baths:</b> ${property.Baths}<br>
+            <b>Year Built:</b> ${property["Year Built"]}<br>
+          `;
+  
+          const marker = L.marker([parseFloat(property.Latitude), parseFloat(property.Longitude)])
+            .bindPopup(popupContent);
+          markers.push(marker);
+        }
+      });
+  
+      const markerGroup = L.layerGroup(markers);
+      return markerGroup;
+    }
+  });

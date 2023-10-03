@@ -9,6 +9,8 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Include Plotly.js from the CDN -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Include your JSON data script -->
+    <script src="Resources/all-listing-gecodio.json"></script>
 </head>
 <body>
     <header>
@@ -19,7 +21,7 @@
 
     <nav>
         <ul>
-            <li><a href="#section1">Team Member 1</a></li>
+            <li><a href="#section1">Md Yousuf Reja</a></li>
             <li><a href="#section2">Chelsea Pimentel</a></li>
             <li><a href="#section3">Team Member 3</a></li>
             <li><a href="#section4">Team Member 4</a></li>
@@ -28,8 +30,18 @@
     </nav>
 
     <section id="section1">
-        <h2>Team Member 1</h2>
+        <h2>Md Yousuf Reja </h2>
         <p>Here, Team Member 1 can present their code contributions or sections of the project. Include code snippets, explanations, and any relevant details.</p>
+    </section>
+<!-- Map container for Property Locations -->
+<div id="map" style="height: 500px;"></div>
+<script type="module" src="static/js/app.js"></script>
+
+    <div id="map" style="height: 600px;"></div>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
     </section>
 
     <section id="section2">
