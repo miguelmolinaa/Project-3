@@ -124,9 +124,6 @@ d3.json("Resources/all-listing-json.json").then(function (data) {
     return propertyTypeCounts;
   }
   
-  function displayPropertyTypeCounts(propertyTypeCounts) {
-    // ... (existing code for displaying property type counts)
-  }
   
   // Function for creating the state pie chart
   function createPropertyStateChart(data) {
