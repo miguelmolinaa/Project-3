@@ -63,8 +63,52 @@
     </section>
 
     <section id="section3">
-        <h2>Team Member 3</h2>
-        <p>Mi name is miguel .</p>
+        <h2>Search and Filtering Tools</h2>
+    
+        <!-- Search Bar -->
+        <input type="text" id="searchInput" placeholder="Enter Full Address, City, ZIP, or Property ID">
+    
+        <!-- Filtering Tools -->
+        <div> <!-- You can use a div to group the filter elements -->
+            <label for="propertyTypeFilter">Property Type:</label>
+            <select id="propertyTypeFilter">
+                <option value="">All</option>
+            </select>
+    
+            <label for="cityFilter">City:</label>
+            <select id="cityFilter">
+                <option value="">All</option>
+            </select>
+    
+            <label for="stateFilter">State:</label>
+            <select id="stateFilter">
+                <option value="">All</option>
+            </select>
+    
+            <label for="specialistFilter">Specialist:</label>
+            <select id="specialistFilter">
+                <option value="">All</option>
+            </select>
+<label for="minPrice">Min Price:</label>
+            <input type="number" id="minPrice" placeholder="Min Price">
+            <label for="maxPrice">Max Price:</label>
+            <input type="number" id="maxPrice" placeholder="Max Price">
+    
+            <label for="saleDateStart">Sale Date Start:</label>
+            <input type="date" id="saleDateStart">
+            <label for="saleDateEnd">Sale Date End:</label>
+            <input type="date" id="saleDateEnd">
+    
+            <label for="inspectedDateStart">Date Inspected Start:</label>
+            <input type="date" id="inspectedDateStart">
+            <label for="inspectedDateEnd">Date Inspected End:</label>
+            <input type="date" id="inspectedDateEnd">
+        </div>
+    
+        <!-- Filter Button -->
+        <button type="button" id="filterButton">Apply Filters</button>
+            <!-- Map container for Property Locations in Section 3 -->
+    <div id="mapSection3" style="height: 500px;"></div>
     </section>
 
     <section id="section4">
